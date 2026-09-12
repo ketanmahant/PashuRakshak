@@ -1,0 +1,249 @@
+/* PashuRakshak Design System & Custom Styling */
+:root {
+  --primary-green: #1f6f43;
+  --primary-green-hover: #175432;
+  --accent-gold: #d97706;
+  --light-bg: #f4f7f5;
+  --card-bg: #ffffff;
+  --text-dark: #1f2937;
+  --text-muted: #6b7280;
+  --border-color: #e5e7eb;
+}
+
+body {
+  background-color: var(--light-bg);
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  color: var(--text-dark);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navbar */
+.navbar-brand {
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.brand-icon {
+  width: 38px;
+  height: 38px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+}
+
+.nav-link {
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.nav-link:hover, .nav-link.active {
+  color: #a7f3d0 !important;
+}
+
+/* Hero Section */
+.hero-banner {
+  background: linear-gradient(135deg, #134e2e 0%, #1f6f43 100%);
+  color: white;
+  padding: 2.5rem 1rem;
+  border-radius: 1rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 10px 25px -5px rgba(31, 111, 67, 0.2);
+}
+
+.hero-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+}
+
+.hero-subtitle {
+  font-size: 1.15rem;
+  opacity: 0.9;
+}
+
+/* Modern Accessible Cards */
+.card-pashu {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-header-pashu {
+  background: #f8faf9;
+  border-bottom: 1px solid var(--border-color);
+  padding: 1rem 1.5rem;
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: #1f2937;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Symptom Checkbox Pills */
+.symptom-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 0.75rem;
+}
+
+.symptom-pill {
+  position: relative;
+  display: block;
+}
+
+.symptom-pill input[type="checkbox"] {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+  pointer-events: none;
+}
+
+.symptom-label {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.75rem 1rem;
+  background: #ffffff;
+  border: 2px solid #e2e8f0;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  user-select: none;
+  min-height: 52px;
+}
+
+.symptom-label:hover {
+  border-color: #94d3a2;
+  background: #f0fdf4;
+}
+
+.symptom-pill input[type="checkbox"]:checked + .symptom-label {
+  background-color: #ecfdf5;
+  border-color: #10b981;
+  color: #065f46;
+  font-weight: 600;
+  box-shadow: 0 0 0 1px #10b981;
+}
+
+.symptom-pill input[type="checkbox"]:checked + .symptom-label .check-indicator {
+  background-color: #10b981;
+  border-color: #10b981;
+  color: white;
+}
+
+.check-indicator {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #cbd5e1;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  color: transparent;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+/* Radio button styles for gender */
+.gender-selector .btn-outline-success {
+  border-color: #cbd5e1;
+  color: #4b5563;
+  padding: 0.6rem 1.25rem;
+  font-weight: 600;
+}
+
+.gender-selector .btn-check:checked + .btn-outline-success {
+  background-color: var(--primary-green);
+  border-color: var(--primary-green);
+  color: white;
+}
+
+/* CTA Buttons */
+.btn-pashu-primary {
+  background-color: var(--primary-green);
+  color: white;
+  border: none;
+  font-weight: 700;
+  padding: 0.9rem 2rem;
+  font-size: 1.15rem;
+  border-radius: 0.75rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 14px 0 rgba(31, 111, 67, 0.35);
+}
+
+.btn-pashu-primary:hover {
+  background-color: var(--primary-green-hover);
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px 0 rgba(31, 111, 67, 0.45);
+}
+
+/* Result Badges & Gauges */
+.risk-badge-lg {
+  font-size: 1.1rem;
+  padding: 0.5rem 1.25rem;
+  border-radius: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.confidence-bar-wrapper {
+  background-color: #e2e8f0;
+  border-radius: 1rem;
+  height: 1.25rem;
+  overflow: hidden;
+}
+
+.matched-symptom-tag {
+  background: #ecfdf5;
+  color: #065f46;
+  border: 1px solid #a7f3d0;
+  border-radius: 2rem;
+  padding: 0.4rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+/* Safety Disclaimer Box */
+.disclaimer-box {
+  background-color: #fffbeb;
+  border-left: 5px solid #f59e0b;
+  border-radius: 0.5rem;
+  padding: 1.25rem;
+  color: #92400e;
+}
+
+.urgent-box {
+  background-color: #fef2f2;
+  border-left: 5px solid #ef4444;
+  border-radius: 0.5rem;
+  padding: 1.25rem;
+  color: #991b1b;
+}
+
+/* Footer */
+footer {
+  margin-top: auto;
+  background: #1e293b;
+  color: #94a3b8;
+  padding: 2rem 0;
+}

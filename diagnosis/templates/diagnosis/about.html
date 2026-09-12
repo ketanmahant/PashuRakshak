@@ -1,0 +1,135 @@
+{% extends 'diagnosis/base.html' %}
+
+{% block title %}About PashuRakshak – Livestock Health Assistant{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-lg-9">
+
+    <!-- Title Card -->
+    <div class="card-pashu mb-4 shadow-sm p-4 p-md-5">
+      <span class="badge bg-success-subtle text-success fw-bold px-3 py-1 rounded-pill mb-2">
+        <i class="bi bi-info-circle me-1"></i> About the Project
+      </span>
+      <h2 class="fw-bold mb-3">What is PashuRakshak?</h2>
+      <p class="lead text-secondary">
+        <strong>PashuRakshak (पशुरक्षक)</strong> is a beginner-friendly prototype livestock health screening platform designed to help farmers, paravets, and cattle owners identify potential health risks from observed symptoms at an early stage.
+      </p>
+      <p class="text-secondary">
+        Early detection of infectious diseases such as Foot and Mouth Disease (FMD), Lumpy Skin Disease, and Hemorrhagic Septicemia is vital to preventing devastating herd mortality and economic losses. PashuRakshak provides rapid preliminary screening guidance to help farmers recognize when urgent veterinary attention is required.
+      </p>
+
+      <hr class="my-4">
+
+      <!-- How it Works Workflow -->
+      <h4 class="fw-bold mb-4">
+        <i class="bi bi-diagram-3-fill text-success me-2"></i>How PashuRakshak Works
+      </h4>
+
+      <div class="row g-3 text-center mb-4">
+        <div class="col-md-4">
+          <div class="p-3 bg-light rounded-3 h-100 border">
+            <div class="badge bg-success rounded-circle p-3 mb-2 fs-5">1</div>
+            <h6 class="fw-bold text-dark">Farmer Observes & Enters Signs</h6>
+            <p class="small text-muted mb-0">Selects species (cow, buffalo, goat, etc.) and checks observed symptoms like fever, skin nodules, or salivation.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-3 bg-light rounded-3 h-100 border">
+            <div class="badge bg-primary rounded-circle p-3 mb-2 fs-5">2</div>
+            <h6 class="fw-bold text-dark">Django Backend Scoring</h6>
+            <p class="small text-muted mb-0">A transparent weighted symptom matching engine compares inputs against the livestock disease knowledge base.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-3 bg-light rounded-3 h-100 border">
+            <div class="badge bg-warning text-dark rounded-circle p-3 mb-2 fs-5">3</div>
+            <h6 class="fw-bold text-dark">Risk & Veterinary Guidance</h6>
+            <p class="small text-muted mb-0">Computes confidence, assigns risk level (LOW to CRITICAL), and issues actionable next steps for veterinary consultation.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Linear Step Diagram -->
+      <div class="p-3 bg-dark text-white rounded-3 mb-4 text-center font-monospace small">
+        <span class="text-warning">Farmer enters symptoms</span>
+        <span class="mx-2 text-white-50">➔</span>
+        <span class="text-info">Django backend</span>
+        <span class="mx-2 text-white-50">➔</span>
+        <span class="text-warning">Symptom analysis</span>
+        <span class="mx-2 text-white-50">➔</span>
+        <span class="text-info">Disease matching</span>
+        <span class="mx-2 text-white-50">➔</span>
+        <span class="text-danger">Risk assessment</span>
+        <span class="mx-2 text-white-50">➔</span>
+        <span class="text-success">Preliminary result</span>
+        <span class="mx-2 text-white-50">➔</span>
+        <span class="text-light fw-bold">Veterinary consultation</span>
+      </div>
+
+      <!-- Prototype Knowledge Base Summary -->
+      <div class="row g-3 mb-4">
+        <div class="col-md-6">
+          <div class="p-3 bg-light rounded border h-100">
+            <h6 class="fw-bold text-dark mb-2">
+              <i class="bi bi-database-check text-success me-1"></i> Disease Knowledge Base
+            </h6>
+            <p class="small text-muted mb-1">
+              Currently includes curated profiles for <strong>10 major livestock diseases</strong>:
+            </p>
+            <ul class="small text-secondary ps-3 mb-0">
+              <li>Foot and Mouth Disease (FMD)</li>
+              <li>Lumpy Skin Disease</li>
+              <li>Hemorrhagic Septicemia (HS)</li>
+              <li>Peste des Petits Ruminants (PPR)</li>
+              <li>Anthrax</li>
+              <li>Mastitis</li>
+              <li>Black Quarter (BQ)</li>
+              <li>Sheep and Goat Pox</li>
+              <li>Classical Swine Fever</li>
+              <li>Avian Influenza (Bird Flu)</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="p-3 bg-light rounded border h-100">
+            <h6 class="fw-bold text-dark mb-2">
+              <i class="bi bi-shield-check text-success me-1"></i> Safety & Medical Protocol
+            </h6>
+            <p class="small text-secondary mb-2">
+              PashuRakshak strictly observes ethical veterinary safety rules:
+            </p>
+            <ul class="small text-secondary ps-3 mb-0">
+              <li>Uses non-definitive phrasing: <em>"Possible condition"</em> and <em>"Potential risk"</em>.</li>
+              <li>Never prescribes medication or specifies antibiotic dosages.</li>
+              <li>Immediately flags critical emergency conditions (Anthrax, Bird Flu, Septicemia) with urgent alerts.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Disclaimer Alert -->
+      <div class="disclaimer-box shadow-sm">
+        <div class="d-flex align-items-start gap-3">
+          <i class="bi bi-exclamation-triangle-fill fs-3 text-warning"></i>
+          <div>
+            <h6 class="fw-bold mb-1">Prototype Notice & Disclaimer</h6>
+            <p class="small mb-0">
+              This screening tool is intended solely for educational, preliminary triage, and research purposes. It cannot replace clinical examination, laboratory culture, PCR testing, or expert diagnosis by a licensed veterinarian.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-4 text-center">
+        <a href="{% url 'home' %}#screening-section" class="btn btn-pashu-primary px-4 py-2">
+          <i class="bi bi-heart-pulse-fill me-1"></i> Perform a Health Screening
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+{% endblock %}
