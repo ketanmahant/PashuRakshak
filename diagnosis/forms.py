@@ -6,8 +6,6 @@ ANIMAL_CHOICES = [
     ('buffalo', 'Buffalo'),
     ('goat', 'Goat'),
     ('sheep', 'Sheep'),
-    ('pig', 'Pig'),
-    ('poultry', 'Poultry'),
 ]
 
 GENDER_CHOICES = [

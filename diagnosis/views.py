@@ -1,3 +1,5 @@
+from typing import Any, cast
+
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from rest_framework.views import APIView
@@ -33,10 +35,12 @@ def home_view(request):
 
             # Execute rule-based screening analysis
             analysis = analyze_symptoms(
-                animal_type=animal_type,
-                selected_symptoms=symptoms,
-                other_symptoms=other_symptoms
-            )
+            animal_type=animal_type,
+            selected_symptoms=symptoms,
+            other_symptoms=other_symptoms,
+            age=age,                    # already available # type: ignore
+    # temperature=temperature,  # add later if you put a temperature field in the form
+)
 
             # Persist diagnosis record for audit and history
             diagnosis = Diagnosis.objects.create(
@@ -131,11 +135,15 @@ class DiagnoseAPIView(APIView):
         if not serializer.is_valid():
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-        data = serializer.validated_data
-        animal_type = data['animal_type']
+        data = cast(dict[str, Any], serializer.validated_data)
+
+        animal_type = data['animal_type'] # type: ignore
+        
         age = data.get('age')
+        
         gender = data.get('gender', 'Female')
-        symptoms = data['symptoms']
+        symptoms = data['symptoms'] # type: ignore
+        
         other_symptoms = data.get('other_symptoms', '')
 
         analysis = analyze_symptoms(
@@ -158,7 +166,7 @@ class DiagnoseAPIView(APIView):
         )
 
         return Response({
-            "id": diagnosis.id,
+            "id": diagnosis.pk,
             "animal_type": diagnosis.animal_type,
             "predicted_disease": diagnosis.predicted_disease,
             "confidence": diagnosis.confidence,

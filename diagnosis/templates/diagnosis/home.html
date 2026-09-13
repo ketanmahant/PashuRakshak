@@ -48,8 +48,6 @@
                 <option value="buffalo" {% if form.animal_type.value == 'buffalo' %}selected{% endif %}>🐃 Buffalo (भैंस)</option>
                 <option value="goat" {% if form.animal_type.value == 'goat' %}selected{% endif %}>🐐 Goat (बकरी)</option>
                 <option value="sheep" {% if form.animal_type.value == 'sheep' %}selected{% endif %}>🐑 Sheep (भेड़)</option>
-                <option value="pig" {% if form.animal_type.value == 'pig' %}selected{% endif %}>🐖 Pig (सूअर)</option>
-                <option value="poultry" {% if form.animal_type.value == 'poultry' %}selected{% endif %}>🐔 Poultry (मुर्गी / बत्तख)</option>
               </select>
               {% if form.animal_type.errors %}
                 <div class="text-danger small mt-1">{{ form.animal_type.errors.0 }}</div>

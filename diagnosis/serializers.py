@@ -25,7 +25,7 @@ class DiagnosisInputSerializer(serializers.Serializer):
     )
 
     def validate_animal_type(self, value):
-        valid_animals = ['cow', 'buffalo', 'goat', 'sheep', 'pig', 'poultry']
+        valid_animals = ['cow', 'buffalo', 'goat', 'sheep']
         val_norm = value.strip().lower()
         if val_norm not in valid_animals:
             raise serializers.ValidationError(

@@ -1,4 +1,5 @@
 from django.db import models
+from .utils import evaluate_risk_level
 
 
 class Disease(models.Model):
@@ -92,3 +93,9 @@ class Diagnosis(models.Model):
 
     def __str__(self):
         return f"{self.animal_type.title()} - {self.predicted_disease} ({self.confidence:.0f}%) - {self.created_at.strftime('%Y-%m-%d %H:%M')}"
+
+# def save(self, *args, **kwargs):
+#         # Auto‑compute risk_level if not set
+#         if not self.risk_level:
+#             self.risk_level = evaluate_risk_level(self.selected_symptoms)
+#         super().save(*args, **kwargs)  # type: ignore
