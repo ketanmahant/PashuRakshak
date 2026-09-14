@@ -176,9 +176,7 @@ PashuRakshak/
 
 8. **Open in browser:**
    - 🌐 Web Interface: **[http://127.0.0.1:8000/](http://127.0.0.1:8000/)**
-   - ⚙️ Admin Dashboard: **[http://127.0.0.1:8000/admin/](http://127.0.0.1:8000/admin/)**
-
----
+   ---
 
 ## 🧪 Running Automated Tests
 
